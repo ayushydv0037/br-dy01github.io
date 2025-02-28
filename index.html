@@ -1,0 +1,110 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Ankita</title>
+    <style>
+        body {
+            background-color: pink;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .hidden {
+            display: none;
+        }
+        .emoji {
+            font-size: 100px;
+            cursor: pointer;
+            animation: dance 1s infinite alternate;
+        }
+        @keyframes dance {
+            0% { transform: rotate(-10deg); }
+            100% { transform: rotate(10deg); }
+        }
+        .message-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 60%;
+            margin: auto;
+            box-shadow: 2px 2px 10px gray;
+        }
+        .button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: white;
+            box-shadow: 2px 2px 5px gray;
+        }
+        .paper {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 60%;
+            margin: auto;
+            box-shadow: 2px 2px 10px gray;
+            transform: scaleY(0);
+            transition: transform 1s ease-in-out;
+        }
+        .paper.show {
+            transform: scaleY(1);
+        }
+        .author {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="start">
+        <div class="emoji" onclick="showQuestion()">❤</div>
+        <p><b>Press this emoji for something</b></p>
+    </div><div id="question" class="hidden">
+    <p><b>Ankita, I have something for you. Do you want to see this?</b></p>
+    <button class="button" onclick="showLetter()">Yes</button>
+    <button class="button" onclick="this.style.display='none'">No</button>
+</div>
+
+<div id="letter" class="hidden">
+    <div class="emoji" onclick="showMessage()">💌</div>
+    <p><b>Ankita, please press this emoji!! 😁</b></p>
+</div>
+
+<div id="message" class="hidden">
+    <div class="paper show">
+        <p>🎉🎂 Happy birthday, Ankita! 🎉🎂</p>
+        <p>May your day be as bright as the sun 🌞<br>And as sweet as the treats you've won 🍰🎁</p>
+        <p>You deserve a celebration that's bold 🎊<br>With laughter, love, and memories to hold 📚</p>
+        <p>May your year ahead be filled with delight 🌈<br>And all your dreams take flight ✈</p>
+        <p>Ankita, you're a shining star ⭐<br>Twinkling bright from near and far 🌠</p>
+        <p>May your birthday wishes all come true 🎁<br>And your day be filled with joy anew 🌈</p>
+        <p>Here's to another year of adventure and fun 🎉<br>May your life be filled with love, laughter, and everyone 🤩</p>
+        <p><b>Happy birthday, dear Ankita! 🎂🎉</b></p>
+    </div>
+</div>
+
+<div class="author">~ by Ayush Kumar Yadav 🌻</div>
+
+<script>
+    function showQuestion() {
+        document.getElementById('start').classList.add('hidden');
+        document.getElementById('question').classList.remove('hidden');
+    }
+    function showLetter() {
+        document.getElementById('question').classList.add('hidden');
+        document.getElementById('letter').classList.remove('hidden');
+    }
+    function showMessage() {
+        document.getElementById('letter').classList.add('hidden');
+        document.getElementById('message').classList.remove('hidden');
+        document.querySelector('.paper').classList.add('show');
+    }
+</script>
+
+</body>
+</html>
